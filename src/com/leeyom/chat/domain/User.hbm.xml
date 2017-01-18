@@ -9,7 +9,11 @@
 		<id name="id">
             <generator class="native"/>
 		</id>
-		<property name="name" />
+		<property name="name" type="java.lang.String"/>
+		<property name="status" type="java.lang.String"/>
+		<property name="sign" type="java.lang.String"/>
+		<property name="avatar" type="java.lang.String"/>
+		<property name="initPanelId" type="java.lang.Integer"/>
 	</class>
 	
 </hibernate-mapping>
