@@ -7,18 +7,24 @@
 
 <session-factory>
 
-	<!-- 1，数据库连接信息 -->
+	<!-- 1，数据库连接信息 ,数据库方言-->
 	<property name="dialect">
 		org.hibernate.dialect.MySQL5InnoDBDialect
 	</property>
 
 	<!-- 2，其他配置 -->
+	<!--格式化sql-->
 	<property name="show_sql">true</property>
+	<!--自动新建表-->
 	<property name="hbm2ddl.auto">update</property>
 
 	<!-- 3，导入映射文件 -->
 	<mapping resource="com/leeyom/chat/domain/User.hbm.xml" />
-
+	<mapping resource="com/leeyom/chat/domain/ChatGroup.hbm.xml" />
+	<mapping resource="com/leeyom/chat/domain/Friend.hbm.xml" />
+	<mapping resource="com/leeyom/chat/domain/FriendGroup.hbm.xml" />
+	<mapping resource="com/leeyom/chat/domain/InitPanel.hbm.xml" />
+	<mapping resource="com/leeyom/chat/domain/PanalData.hbm.xml" />
 
 </session-factory>
 
