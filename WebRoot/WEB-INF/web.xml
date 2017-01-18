@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="2.5">
 	<display-name>chatroom</display-name>
 	<welcome-file-list>
-		<welcome-file>test.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<!-- 配置Spring中解决懒加载异常的过滤器 -->
