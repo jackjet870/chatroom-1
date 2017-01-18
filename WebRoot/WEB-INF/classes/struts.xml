@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <!--struts总的配置文件-->
+    <!--指定Web应用的默认Locale。-->
+    <constant name="struts.locale" value="zh_CN"/>
+    <!--Struts 2默认的ObjectFactory Bean，该属性默认值是spring-->
+    <constant name="struts.objectFactory" value="spring"/>
+    <!--指定Struts 2文件上传中整个请求内容允许的最大字节数-->
+    <constant name="struts.multipart.maxSize" value="104857600"/>
+    <!--允许在Action名中使用斜线-->
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+
+    <!--各个模块对应的struts配置文件-->
+    <include file="struts/struts-test.xml"/>
+
+</struts>
+
