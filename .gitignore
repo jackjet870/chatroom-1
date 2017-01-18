@@ -6,3 +6,7 @@ chatroom.iml
 chatroom.iml
 
 *.class
+
+WebRoot/WEB-INF/classes/hibernate.cfg.xml
+
+WebRoot/WEB-INF/classes/hibernate.cfg.xml
