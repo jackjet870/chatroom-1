@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.leeyom.chat.domain">
+
+    <class name="FriendGroup" table="friendGroup">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="groupname" type="java.lang.String"/>
+
+        <!--panalData 属性,本类与PanalData 多对一关系-->
+        <many-to-one name="panalData" class="PanalData" column="panalDataId"/>
+
+        <!--friends 属性,本类与Friend 一对多关系-->
+        <set name="friends">
+            <key column="friendGroupId"></key>
+            <one-to-many class="Friend"/>
+        </set>
+
+    </class>
+
+</hibernate-mapping>
