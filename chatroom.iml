@@ -67,6 +67,7 @@
           <fileset id="s2fileset" name="My Fileset " removed="false">
             <file>file://$MODULE_DIR$/config/struts/struts-test.xml</file>
             <file>file://$MODULE_DIR$/config/struts.xml</file>
+            <file>file://$MODULE_DIR$/config/struts/struts-user.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>

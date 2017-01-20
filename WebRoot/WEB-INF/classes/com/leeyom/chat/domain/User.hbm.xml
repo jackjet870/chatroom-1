@@ -14,6 +14,9 @@
 		<property name="sign" type="java.lang.String"/>
 		<property name="avatar" type="java.lang.String"/>
 		<property name="initPanelId" type="java.lang.Integer"/>
+		<property name="email" type="java.lang.String"/>
+		<property name="password" type="java.lang.String"/>
+
 	</class>
 	
 </hibernate-mapping>
