@@ -40,12 +40,12 @@
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit="" lay-filter="demo1">立即登陆</button>
                 <span style="padding-left: 20px;">
-                    <a href="/user/forget">注册</a>
+                    <a href="javascript:registerUser()">注册</a>
                 </span>
             </div>
         </div>
     </form>
-
 </div>
 </body>
 </html>
+<script type="text/javascript" src="<%=basePath %>/js/index.js"></script>
