@@ -4,19 +4,22 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-    <!-- 配置为开发模式 -->
-    <constant name="struts.devMode" value="true"/>
     <!-- 把扩展名配置为action -->
     <constant name="struts.action.extension" value="action"/>
-    <!-- 把主题配置为simple -->
-    <constant name="struts.ui.theme" value="simple"/>
     <!-- 设置该应用使用的编码集为utf-8	-->
     <constant name="struts.i18n.encoding" value="utf-8"/>
     <!-- 上传临时文件目录 会在tomcat所在根目录自动创建 -->
     <constant name="struts.multipart.saveDir" value="/tempFile"/>
 
     <package name="user" namespace="/user" extends="struts-default">
-        <!--保存用户-->
+       <!-- <interceptors>
+            <interceptor-stack name="s2Stack">
+                <interceptor-ref name="model-driven"/>
+                <interceptor-ref name="params"/>
+            </interceptor-stack>
+        </interceptors>-->
+
+        <!--注册用户-->
         <action name="saveUser" class="userAction" method="saveUser">
             <result name="success" type="freemarker">
                 <param name="location">/simpleout.ftl</param>
@@ -24,6 +27,13 @@
             <result name="error">/error.jsp</result>
         </action>
 
+        <!--用户登陆-->
+        <action name="login" class="userAction" method="login">
+            <result name="success" type="freemarker">
+                <param name="location">/simpleout.ftl</param>
+            </result>
+            <result name="error">/error.jsp</result>
+        </action>
 
     </package>
 </struts>

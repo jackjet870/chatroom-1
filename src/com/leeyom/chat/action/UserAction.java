@@ -8,13 +8,12 @@ import com.leeyom.chat.service.PanalDataService;
 import com.leeyom.chat.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
-import org.junit.Test;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.io.UnsupportedEncodingException;
+import javax.servlet.http.HttpSession;
 
 /**
  * 描述: 跟用户信息相关的action
@@ -23,7 +22,7 @@ import java.io.UnsupportedEncodingException;
  */
 @Controller
 @Scope("prototype")
-public class UserAction extends ActionSupport{
+public class UserAction extends ActionSupport {
 
     @Resource
     UserService userService;
@@ -31,8 +30,9 @@ public class UserAction extends ActionSupport{
     PanalDataService panalDataService;
     @Resource
     InitPanelService initPanalService;
+
     /**
-     * 描述: 保存用户注册信息
+     * 描述: 注册用户
      * 作者: leeyom
      * 时间: 2017-01-19 11:46
      */
@@ -51,6 +51,13 @@ public class UserAction extends ActionSupport{
         user.setSign(sign);//签名
         user.setStatus("offline");//默认为离线状态
         user.setAvatar("style/images/avator.jpg");//默认头像
+
+        User userInfo = userService.getUserInfoByEmailAndPassword(email, password);
+        if (userInfo!=null){
+            request.setAttribute("responseText", "falied");
+            return SUCCESS;
+        }
+
         //保存用户信息
         userService.saveOrUpdate(user);
 
@@ -68,8 +75,33 @@ public class UserAction extends ActionSupport{
         user.setInitPanelId(initPanel.getId());//当前创建的用户关联面板
         userService.saveOrUpdate(user);
 
-        request.setAttribute("responseText","success");
+        request.setAttribute("responseText", "success");
 
+        return SUCCESS;
+    }
+
+    /**
+     * 描述: 用户登录
+     * 作者: leeyom
+     * 时间: 2017-02-04 02:37
+     */
+    public String login() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        User user = userService.getUserInfoByEmailAndPassword(email, password);
+        //将用户的登陆信息存到session中
+        HttpSession session = request.getSession();
+        session.setAttribute("userId",user.getId());
+        if (user != null) {
+            //更新状态信息
+            user.setStatus("online");
+            userService.saveOrUpdate(user);
+            request.setAttribute("responseText", "success");
+        } else {
+            request.setAttribute("responseText", "falied");
+        }
         return SUCCESS;
     }
 }
