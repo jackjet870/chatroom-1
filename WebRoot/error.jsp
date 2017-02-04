@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div id="message">
-		<p><img style = "width:800px;height:300px;" src="<%=basePath %>/images/futian/error.jpg"/></p>
+		<%--<p><img style = "width:800px;height:300px;" src="<%=basePath %>/images/futian/error.jpg"/></p>--%>
         <p class="text1">当前页面出现故障， <a href="javascript:history.go(-1)"><font size = "4">点击返回上一页</font></a>&nbsp;&nbsp;&nbsp;&nbsp;<br/>
         
 		 <p class="text1">若有疑问请联系我们的工程师进行解决...<br/>
