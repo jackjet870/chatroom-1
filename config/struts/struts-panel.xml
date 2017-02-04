@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- 把扩展名配置为action -->
+    <constant name="struts.action.extension" value="action"/>
+    <!-- 设置该应用使用的编码集为utf-8	-->
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+    <!-- 上传临时文件目录 会在tomcat所在根目录自动创建 -->
+    <constant name="struts.multipart.saveDir" value="/tempFile"/>
+
+    <package name="panel" namespace="/panel" extends="struts-default">
+
+        <!--初始化面板-->
+        <action name="initPanel" class="panelAction" method="initPanel">
+            <result name="success" type="freemarker">
+                <param name="location">/simpleout.ftl</param>
+            </result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+    </package>
+</struts>
