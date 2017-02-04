@@ -14,10 +14,11 @@
     </script>
     <script src="<%=basePath %>/js/layui/layui.js"></script>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/js/layui/css/layui.css" media="all"/>
+    <script src="<%=basePath %>/js/jquery/jquery-1.8.0.min.js"></script>
 </head>
 <body>
 <div style="margin: 10px;">
-    <form class="layui-form" action="<%=basePath %>/user/saveUser.action" method="post">
+    <form id="userForm" class="layui-form">
 
         <div class="layui-form-item">
             <label class="layui-form-label">昵称</label>
