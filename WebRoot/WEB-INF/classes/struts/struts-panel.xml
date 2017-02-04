@@ -11,24 +11,10 @@
     <!-- 上传临时文件目录 会在tomcat所在根目录自动创建 -->
     <constant name="struts.multipart.saveDir" value="/tempFile"/>
 
-    <package name="user" namespace="/user" extends="struts-default">
-       <!-- <interceptors>
-            <interceptor-stack name="s2Stack">
-                <interceptor-ref name="model-driven"/>
-                <interceptor-ref name="params"/>
-            </interceptor-stack>
-        </interceptors>-->
+    <package name="panel" namespace="/panel" extends="struts-default">
 
-        <!--注册用户-->
-        <action name="saveUser" class="userAction" method="saveUser">
-            <result name="success" type="freemarker">
-                <param name="location">/simpleout.ftl</param>
-            </result>
-            <result name="error">/error.jsp</result>
-        </action>
-
-        <!--用户登陆-->
-        <action name="login" class="userAction" method="login">
+        <!--初始化面板-->
+        <action name="initPanel" class="panelAction" method="initPanel">
             <result name="success" type="freemarker">
                 <param name="location">/simpleout.ftl</param>
             </result>
