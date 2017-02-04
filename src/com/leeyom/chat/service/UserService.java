@@ -11,4 +11,11 @@ public interface UserService {
      * 时间: 2017-01-19 11:27
      */
     public void saveOrUpdate(User user);
+
+    /**
+     * 描述: 获取用户信息
+     * 作者: leeyom
+     * 时间: 2017-02-04 03:26
+     */
+    User getUserInfoByEmailAndPassword(String email, String password);
 }

@@ -26,4 +26,17 @@ public class UserServiceImpl implements UserService{
     public void saveOrUpdate(User user) {
         userDao.saveOrUpdate(user);
     }
+
+    /**
+     * 描述:获取用户信息
+     * 作者: leeyom
+     * 时间: 2017-02-04 03:26
+     */
+    @Override
+    public User getUserInfoByEmailAndPassword(String email, String password) {
+
+        String hql = "from User u where u.email = ? and u.password = ?";
+        User user = userDao.getUserInfoByEmailAndPassword(hql,new Object[]{email,password});
+        return user;
+    }
 }
