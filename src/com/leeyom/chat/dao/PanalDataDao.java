@@ -15,4 +15,6 @@ public interface PanalDataDao {
      * 时间: 2017-01-19 11:38
      */
     void saveOrUpdatePanalData(PanalData panalData);
+
+    PanalData getPanalDataById(String hql, Object[] objects);
 }

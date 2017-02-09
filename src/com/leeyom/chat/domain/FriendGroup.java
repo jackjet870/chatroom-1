@@ -1,6 +1,7 @@
 package com.leeyom.chat.domain;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * 描述: 好友分组信息
@@ -11,7 +12,7 @@ public class FriendGroup {
 
     private String groupname;//好友分组名称
     private int id;//主键
-    private List<Friend> friends;//好友列表
+    private Set<Friend> friends;//好友列表
     private PanalData panalData;//面板详情
 
     public PanalData getPanalData() {
@@ -38,11 +39,11 @@ public class FriendGroup {
         this.id = id;
     }
 
-    public List<Friend> getFriends() {
+    public Set<Friend> getFriends() {
         return friends;
     }
 
-    public void setFriends(List<Friend> friends) {
+    public void setFriends(Set<Friend> friends) {
         this.friends = friends;
     }
 }

@@ -3,9 +3,9 @@ package com.leeyom.chat.dao.impl;
 import com.leeyom.chat.common.BaseServiceSupport;
 import com.leeyom.chat.dao.PanalDataDao;
 import com.leeyom.chat.domain.PanalData;
-import com.leeyom.chat.service.PanalDataService;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * 描述:
@@ -28,5 +28,21 @@ public class PanalDataDaoImpl extends BaseServiceSupport implements PanalDataDao
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public PanalData getPanalDataById(String hql, Object[] objects) {
+        try {
+            List<PanalData> panalDatas = dao.getList(hql,objects);
+            if (panalDatas.size()>0){
+                return panalDatas.get(0);
+            }else {
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

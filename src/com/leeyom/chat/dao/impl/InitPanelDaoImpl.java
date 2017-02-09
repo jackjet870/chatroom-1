@@ -4,8 +4,11 @@ import com.leeyom.chat.common.BaseServiceSupport;
 import com.leeyom.chat.dao.InitPanelDao;
 import com.leeyom.chat.domain.InitPanel;
 import com.leeyom.chat.domain.PanalData;
+import com.leeyom.chat.domain.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * 描述:
@@ -23,5 +26,21 @@ public class InitPanelDaoImpl extends BaseServiceSupport implements InitPanelDao
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public InitPanel getInitPanelById(String hql, Object[] objects) {
+        try {
+            List<InitPanel> initPanels = dao.getList(hql,objects);
+            if (initPanels.size()>0){
+                return initPanels.get(0);
+            }else {
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

@@ -38,5 +38,21 @@ public class UserDaoImpl extends BaseServiceSupport implements UserDao {
         return null;
     }
 
+    @Override
+    public User getUserInfoById(String hql, Object[] objects) {
+        try {
+            List<User> users = dao.getList(hql,objects);
+            if (users.size()>0){
+                return users.get(0);
+            }else {
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 
 }

@@ -10,4 +10,6 @@ import com.leeyom.chat.domain.PanalData;
  */
 public interface InitPanelDao {
     void saveOrUpdateInitPanel(InitPanel initPanel);
+
+    InitPanel getInitPanelById(String hql, Object[] objects);
 }

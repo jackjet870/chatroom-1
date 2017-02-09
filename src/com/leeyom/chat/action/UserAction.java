@@ -50,7 +50,7 @@ public class UserAction extends ActionSupport {
         user.setPassword(password);//密码
         user.setSign(sign);//签名
         user.setStatus("offline");//默认为离线状态
-        user.setAvatar("style/images/avator.jpg");//默认头像
+        user.setAvatar("../style/images/avator.jpg");//默认头像
 
         User userInfo = userService.getUserInfoByEmailAndPassword(email, password);
         if (userInfo!=null){
@@ -93,8 +93,9 @@ public class UserAction extends ActionSupport {
         User user = userService.getUserInfoByEmailAndPassword(email, password);
         //将用户的登陆信息存到session中
         HttpSession session = request.getSession();
-        session.setAttribute("userId",user.getId());
         if (user != null) {
+            session.setAttribute("userId",user.getId());
+            session.setAttribute("userName",user.getName());
             //更新状态信息
             user.setStatus("online");
             userService.saveOrUpdate(user);

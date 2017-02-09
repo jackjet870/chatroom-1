@@ -10,4 +10,6 @@ public interface UserDao {
     public void saveOrUpdate(User user);
 
     User getUserInfoByEmailAndPassword(String hql, Object[] objects);
+
+    User getUserInfoById(String hql, Object[] objects);
 }
