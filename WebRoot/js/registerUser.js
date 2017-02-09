@@ -18,7 +18,7 @@ layui.use('form', function () {
             },
             dataType: 'text',
             success: function (data) {
-                if (data = "success") {
+                if (data == "success") {
                     //layer的alert是非阻塞式的,需要采用事件回调的形式
                     layer.alert('注册成功!', function (index) {
                         layer.close(index);
@@ -28,7 +28,7 @@ layui.use('form', function () {
                         return false;
                     });
                 } else {
-                    layer.msg("注册失败!");
+                    layer.msg("注册失败!该邮箱已被注册!");
                 }
             }
         });

@@ -2,7 +2,9 @@
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-    String userId = (String) session.getAttribute("userId");
+    int userId = (Integer) session.getAttribute("userId");
+    String userName = (String)session.getAttribute("userName");
+    System.out.println("userId的值=========================>"+session.getAttribute("userId"));
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -13,6 +15,7 @@
     <script type="text/javascript">
         var basePath = '<%=basePath %>';
         var userId = '<%=userId%>';
+        var userName = '<%=userName%>';
     </script>
     <script src="<%=basePath %>/js/layui/layui.js"></script>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/js/layui/css/layui.css" media="all"/>

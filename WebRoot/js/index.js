@@ -15,7 +15,7 @@ layui.use('form', function () {
             },
             dataType: 'text',
             success: function (data) {
-                if (data = "success") {
+                if (data == "success") {
                     window.location.href = basePath + 'jsp/main.jsp';
                 } else {
                     layer.msg("登陆失败!");
