@@ -14,4 +14,11 @@ public interface PanalDataService {
      * 时间: 2017-01-19 11:37
      */
     void saveOrUpdatePanalData(PanalData panalData);
+
+    /**
+     * 描述: 获取面板数据
+     * 作者: leeyom
+     * 时间: 2017-02-04 09:13
+     */
+    PanalData getPanalDataById(int panalDataId);
 }

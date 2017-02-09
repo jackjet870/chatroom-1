@@ -1,6 +1,7 @@
 package com.leeyom.chat.domain;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * 描述: 面板详情
@@ -11,8 +12,8 @@ public class PanalData {
 
     private int id;//主键
     private int userId;//用户id
-    List<ChatGroup> chatGroups;//聊天群列表
-    List<FriendGroup> friendGroups;//好友分组列表
+    Set<ChatGroup> chatGroups;//聊天群列表
+    Set<FriendGroup> friendGroups;//好友分组列表
 
     public int getId() {
         return id;
@@ -30,19 +31,19 @@ public class PanalData {
         this.userId = userId;
     }
 
-    public List<ChatGroup> getChatGroups() {
+    public Set<ChatGroup> getChatGroups() {
         return chatGroups;
     }
 
-    public void setChatGroups(List<ChatGroup> chatGroups) {
+    public void setChatGroups(Set<ChatGroup> chatGroups) {
         this.chatGroups = chatGroups;
     }
 
-    public List<FriendGroup> getFriendGroups() {
+    public Set<FriendGroup> getFriendGroups() {
         return friendGroups;
     }
 
-    public void setFriendGroups(List<FriendGroup> friendGroups) {
+    public void setFriendGroups(Set<FriendGroup> friendGroups) {
         this.friendGroups = friendGroups;
     }
 }

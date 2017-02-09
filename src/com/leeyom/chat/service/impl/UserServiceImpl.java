@@ -39,4 +39,17 @@ public class UserServiceImpl implements UserService{
         User user = userDao.getUserInfoByEmailAndPassword(hql,new Object[]{email,password});
         return user;
     }
+
+    /**
+     * 描述: 根据id获取用户信息
+     * 作者: leeyom
+     * 时间: 2017-02-04 08:57
+     *
+     * @param userId
+     */
+    @Override
+    public User getUserInfoById(int userId) {
+        String hql = "from User u where u.id = ?";
+        return userDao.getUserInfoById(hql,new Object[]{userId});
+    }
 }

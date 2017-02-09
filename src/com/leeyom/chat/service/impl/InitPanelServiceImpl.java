@@ -24,4 +24,11 @@ public class InitPanelServiceImpl implements InitPanelService{
     public void saveOrUpdate(InitPanel initPanel) {
         initPanelDao.saveOrUpdateInitPanel(initPanel);
     }
+
+    @Override
+    public InitPanel getInitPanelById(int initPanelId) {
+
+        String hql = "from InitPanel i where i.id = ?";
+        return initPanelDao.getInitPanelById(hql,new Object[]{initPanelId});
+    }
 }

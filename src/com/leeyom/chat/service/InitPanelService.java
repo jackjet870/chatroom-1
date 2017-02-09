@@ -9,4 +9,11 @@ import com.leeyom.chat.domain.InitPanel;
  */
 public interface InitPanelService {
     public void saveOrUpdate(InitPanel initPanel);
+
+    /**
+     * 描述: 根据id获取面板信息
+     * 作者: leeyom
+     * 时间: 2017-02-04 09:06
+     */
+    InitPanel getInitPanelById(int initPanelId);
 }

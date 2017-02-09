@@ -32,4 +32,10 @@ public class PanalDataServiceImpl implements PanalDataService {
     public void saveOrUpdatePanalData(PanalData panalData) {
         panalDataDao.saveOrUpdatePanalData(panalData);
     }
+
+    @Override
+    public PanalData getPanalDataById(int panalDataId) {
+        String hql = "from PanalData p where p.id = ?";
+        return panalDataDao.getPanalDataById(hql,new Object[]{panalDataId});
+    }
 }
